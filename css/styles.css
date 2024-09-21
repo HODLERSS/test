@@ -40,6 +40,8 @@ nav a:hover {
 nav span {
   color: #000733; /* Pipe separator color */
   font-weight: bold; /* Make the pipe bold */
+  font-size: 20px; /* Increase the size of the pipe */
+
 }
 
 /* Top Section */
