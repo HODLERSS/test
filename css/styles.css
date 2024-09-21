@@ -1,0 +1,18 @@
+nav {
+  background-color: #002366; /* Lighter shade of navy */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  margin: 0 20px;
+  text-transform: none; /* Keep the titles in normal case */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
