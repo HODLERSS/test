@@ -1,3 +1,21 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000733; /* Dark navy background */
+  color: #ffffff; /* White text color */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px; /* Keep the same max width */
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Navigation Bar */
 nav {
   background-color: #002366; /* Lighter shade of navy */
   padding: 10px 0;
@@ -15,4 +33,114 @@ nav a {
 
 nav a:hover {
   text-decoration: underline; /* Underline links on hover */
+}
+
+/* Top Section */
+.header {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif; /* Font for your name */
+  font-size: 3.5em; /* Enlarged name */
+  margin-bottom: 10px;
+  text-transform: uppercase; /* All caps for name */
+}
+
+.header p {
+  color: #d1d1d1; /* Light gray text */
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+/* Introduction */
+.intro {
+  text-align: center;
+  padding: 0px 0;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #d1d1d1;
+  line-height: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 65px;
+}
+
+/* Project Section */
+h2 {
+  font-family: 'Poppins', sans-serif; /* Poppins font for section titles */
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 0px; /* Reduced gap between blocks */
+}
+
+.project {
+  width: 33.2%; /* Keeping the size of the boxes the same */
+  padding: 10px; /* Standard padding */
+  box-sizing: border-box;
+  border: 0.3px solid #444444; /* Thinner dark grey outline */
+}
+
+.project video {
+  width: 100%;
+  height: auto; /* Maintain video ratio */
+  object-fit: contain; /* Preserves aspect ratio */
+  margin-bottom: 5px; /* Tighter gap below video */
+}
+
+.project h3 {
+  font-family: 'Poppins', sans-serif; /* Poppins for sub-subtitles */
+  margin-top: 10px;
+  font-size: 1.2em;
+  margin-left: 15px; /* Small left offset */
+  margin-right: 15px;
+}
+
+.project p {
+  color: #d1d1d1; /* Light gray text */
+  font-size: 1em;
+  text-align: left; /* Left-align text */
+  line-height: 1.5em;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* Major Project Section */
+.major-project {
+  padding: 10px; /* Standard padding */
+  border: 0.3px solid #444444; /* Thinner dark grey outline */
+  text-align: left; /* Left-align text */
+}
+
+.major-project img {
+  width: 100%;
+  height: auto; /* Normal image size */
+  object-fit: contain; /* Preserves aspect ratio */
+  margin-bottom: 5px; /* Tighter gap below image */
+}
+
+.major-project h3 {
+  font-family: 'Poppins', sans-serif'; /* Poppins for major project subtitle */
+  margin-top: 10px;
+  font-size: 1.8em;
+  margin-left: 5px; /* Small left offset */
+  margin-right: 5px;
+}
+
+.major-project p {
+  color: #d1d1d1; /* Light gray text */
+  font-size: 1.2em;
+  text-align: left; /* Left-align text */
+  line-height: 1.5em;
+  margin-left: 5px;
+  margin-right: 5px;
 }
