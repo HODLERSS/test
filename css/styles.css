@@ -20,19 +20,25 @@ nav {
   background-color: #ffffff; /* Set background to white */
   padding: 10px 0;
   text-align: center;
+  color: #000733; /* Ensure text (and the pipe) is colored correctly */
 }
 
 nav a {
-  color: #000733; /* Set text color to match index.html background color */
+  color: #000733; /* Set text color for links */
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1.2em;
-  margin: 0 20px;
+  margin: 0 10px; /* Adjust margin */
   text-transform: none; /* Keep the titles in normal case */
 }
 
 nav a:hover {
   text-decoration: underline; /* Underline links on hover */
+}
+
+/* Optional: Ensure the pipe inherits the color */
+nav span {
+  color: #000733; /* Pipe separator color */
 }
 
 /* Top Section */
