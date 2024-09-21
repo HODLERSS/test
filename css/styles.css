@@ -42,7 +42,7 @@ nav span {
   font-size: 28px; /* Increase size of the pipe */
   color: #000733; /* Pipe separator color */
   font-weight: bold; /* Make the pipe bold */
-  line-height: 1.2em; /* Adjust line height if necessary */
+  line-height: 0.8em; /* Adjust line height if necessary */
 }
 
 /* Top Section */
