@@ -2,73 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minjae Lee</title>
+  <title>Minjae Lee - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000733; /* Darker navy background */
+      background-color: #000733; /* Dark navy background */
       color: #ffffff; /* White text color */
       margin: 0;
       padding: 0;
     }
 
-    /* Navigation Bar */
-    nav {
-      background-color: #000733; /* Same dark navy for nav bar */
-      padding: 10px 0;
+    .container {
+      max-width: 960px; /* Keep the same max width */
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* Top Section */
+    .header {
       text-align: center;
+      padding: 50px 0;
     }
 
-    nav a {
-      color: #00bfff; /* Bright blue for nav links */
-      margin: 0 20px;
-      text-decoration: none;
-      font-size: 18px;
+    .header h1 {
+      font-family: 'Poppins', sans-serif; /* Font for your name */
+      font-size: 3.5em; /* Enlarged name */
+      margin-bottom: 10px;
+      text-transform: uppercase; /* All caps for name */
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Main Content */
-    .content {
-      text-align: center;
-      padding: 50px;
-    }
-
-    h1 {
-      color: #ffffff;
-    }
-
-    p {
+    .header p {
       color: #d1d1d1; /* Light gray text */
+      font-size: 1.1em;
+      margin: 5px 0;
     }
 
-    a {
-      color: #00bfff; /* Bright blue for links */
-      text-decoration: none;
+    /* Introduction */
+    .intro {
+      text-align: center;
+      padding: 0px 0;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .intro p {
+      font-size: 1.2em;
+      color: #d1d1d1;
+      line-height: 1.5em;
+      max-width: 800px;
+      margin: 0 auto;
     }
+
+    /* Project Section */
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      gap: 0px; /* Reduced gap between blocks to 1/4 of the current gap */
+    }
+
+    .project {
+      width: 33.2%; /* Keeping the size of the boxes the same */
+      padding: 10px; /* Standard padding */
+      box-sizing: border-box;
+      border: 0.3px solid #444444; /* Thinner dark grey outline */
+    }
+
+    .project img {
+      width: 100%;
+      height: auto; /* Maintain image ratio */
+      object-fit: contain; /* Preserves aspect ratio */
+      margin-bottom: 5px; /* Tighter gap below image */
+    }
+
+    .project h3, .project p {
+      margin-left: 15px; /* Small left offset for text */
+      margin-right: 15px; /* Keep offset uniform on right as well */
+    }
+
+    .project h3 {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    .project p {
+      color: #d1d1d1; /* Light gray text */
+      font-size: 1em;
+      text-align: left; /* Left-align text */
+      line-height: 1.5em;
+    }
+
+    /* Major Project Section */
+    .major-project {
+      padding: 10px; /* Standard padding */
+      border: 0.3px solid #444444; /* Thinner dark grey outline */
+      text-align: left; /* Left-align text */
+    }
+
+    .major-project img {
+      width: 100%;
+      height: auto; /* Normal image size */
+      object-fit: contain; /* Preserves aspect ratio */
+      margin-bottom: 5px; /* Tighter gap below image */
+    }
+
+    .major-project h3, .major-project p {
+      margin-left: 5px; /* Small left offset for text */
+      margin-right: 5px; /* Keep offset uniform on right as well */
+    }
+
+    .major-project h3 {
+      margin-top: 10px;
+      font-size: 1.8em;
+    }
+
+    .major-project p {
+      color: #d1d1d1; /* Light gray text */
+      font-size: 1.2em;
+      text-align: left; /* Left-align text */
+      line-height: 1.5em;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#life">Life</a>
-  </nav>
+  <!-- Top Section with Contact Info -->
+  <div class="container">
+    <div class="header">
+      <h1>MINJAE LEE</h1>
+      <p>Email: <a href="mailto:minjae.m.lee@gmail.com" style="color: #00bfff;">minjae.m.lee@gmail.com</a></p>
+    </div>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>Minjae Lee</h1>
-    <p>Email: <a href="mailto:minjae.m.lee@gmail.com">minjae.m.lee@gmail.com</a></p>
-    <p><a href="resume.pdf" target="_blank">Download My Resume</a></p>
+    <!-- Introduction -->
+    <div class="intro">
+      <p>Hello! I'm Minjae Lee, a passionate web developer and digital strategist with a keen focus on building high-performance websites and applications. I have worked with a wide range of clients, from startups to large corporations. My aim is to deliver innovative solutions that drive results while ensuring an excellent user experience.</p>
+    </div>
+
+    <!-- Projects Row -->
+    <h2>Professional Work</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://via.placeholder.com/300x169" alt="Project 1">
+        <h3>Freelance Web Development</h3>
+        <p>I've worked with a wide variety of clients, from individuals & startups to large corporations, building UIs for apps, landing pages, and documentation sites. My work often involves designing sleek and user-friendly interfaces for the best user experience.</p>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/300x169" alt="Project 2">
+        <h3>Anaren.com</h3>
+        <p>A Drupal website for a defense company, featuring pages for divisions and product lines, integrated with DataTables. This project required a strong focus on both functionality and security, ensuring data integrity and a user-friendly experience for clients.</p>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/300x169" alt="Project 3">
+        <h3>Atmosphere IoT</h3>
+        <p>A low-code IoT platform that allows the deployment of solutions on browsers and mobile apps, with a custom WordPress theme. This project highlighted my ability to manage complex backend integrations while maintaining a high standard for user interface design.</p>
+      </div>
+    </div>
+
+    <!-- Major Project Section -->
+    <h2>Content Creation</h2>
+    <div class="major-project">
+      <img src="https://via.placeholder.com/1200x400" alt="Major Project">
+      <h3>Content Creation - YouTube</h3>
+      <p>I make YouTube videos on web development, including tutorials and projects I'm currently working on. These videos cover various aspects of web development, from front-end design to backend integrations, and are aimed at helping developers of all skill levels.</p>
+    </div>
   </div>
 
 </body>
