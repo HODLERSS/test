@@ -39,7 +39,7 @@ nav a:hover {
 /* Optional: Ensure the pipe inherits the color */
 nav span {
   display: inline-block; /* Ensure it behaves like text but can be styled separately */
-  font-size: 28px; /* Increase size of the pipe */
+  font-size: 22px; /* Increase size of the pipe */
   color: #000733; /* Pipe separator color */
   font-weight: bold; /* Make the pipe bold */
   line-height: 0.8em; /* Adjust line height if necessary */
