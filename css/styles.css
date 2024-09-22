@@ -106,17 +106,17 @@ h2 {
 }
 
 .project h3 {
-  font-family: 'Poppins', sans-serif; /* Poppins for sub-subtitles */
+  font-family: 'Poppins', sans-serif;
   margin-top: 10px;
   font-size: 1.2em;
-  margin-left: 15px; /* Small left offset */
+  margin-left: 15px;
   margin-right: 15px;
 }
 
 .project p {
-  color: #d1d1d1; /* Light gray text */
+  color: #d1d1d1;
   font-size: 1em;
-  text-align: left; /* Left-align text */
+  text-align: left;
   line-height: 1.5em;
   margin-left: 15px;
   margin-right: 15px;
@@ -124,72 +124,68 @@ h2 {
 
 /* Major Project Section */
 .major-project {
-  padding: 10px; /* Standard padding */
-  border: 0.3px solid #444444; /* Thinner dark grey outline */
-  text-align: left; /* Left-align text */
+  padding: 10px;
+  border: 0.3px solid #444444;
+  text-align: left;
 }
 
 .major-project img {
   width: 100%;
   height: auto; /* Normal image size */
-  object-fit: contain; /* Preserves aspect ratio */
-  margin-bottom: 5px; /* Tighter gap below image */
+  object-fit: contain;
+  margin-bottom: 5px;
 }
 
 .major-project h3 {
-  font-family: 'Poppins', sans-serif'; /* Poppins for major project subtitle */
+  font-family: 'Poppins', sans-serif';
   margin-top: 10px;
   font-size: 1.8em;
-  margin-left: 5px; /* Small left offset */
+  margin-left: 5px;
   margin-right: 5px;
 }
 
 .major-project p {
-  color: #d1d1d1; /* Light gray text */
+  color: #d1d1d1;
   font-size: 1.2em;
-  text-align: left; /* Left-align text */
+  text-align: left;
   line-height: 1.5em;
   margin-left: 5px;
   margin-right: 5px;
 }
 
-/* Media query for responsive design */
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-
-  /* Adjust container for mobile */
-  .container {
-    width: 100%;
-    padding: 10px;
+  body {
+    overflow-x: hidden; /* Disable horizontal scroll on mobile */
   }
 
-  /* Stack projects vertically on mobile */
+  .container {
+    width: 100%; /* Ensure container fits within the screen */
+    padding: 10px; /* Reduce padding */
+  }
+
   .projects {
-    display: block;
+    display: block; /* Stack projects vertically on mobile */
   }
 
   .project {
     width: 100%; /* Full width for mobile */
-    margin-bottom: 20px;
-  }
-
-  /* Make fonts smaller on mobile */
-  h1 {
-    font-size: 2.5em;
-  }
-
-  h2 {
-    font-size: 1.8em;
+    margin-bottom: 20px; /* Add spacing between stacked projects */
   }
 
   nav a {
-    font-size: 1em; /* Slightly smaller font for mobile */
+    font-size: 1em; /* Slightly smaller navigation font for mobile */
   }
 
-  .project h3 {
-    font-size: 1.1em;
+  h1 {
+    font-size: 2.5em; /* Reduce heading size for mobile */
+  }
+
+  h2 {
+    font-size: 1.8em; /* Reduce section title size */
   }
 
   .intro p, .project p, .major-project p {
-    font-size: 1em;
+    font-size: 1em; /* Reduce paragraph font size */
   }
 }
