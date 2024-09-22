@@ -6,68 +6,82 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Disable horizontal scroll globally */
-  animation: fadeIn 1s ease-in-out; /* Apply fade-in to the entire page */
 }
 
-/* Keyframe animation for fade-in effect */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Apply fade-in to containers */
 .container {
-  max-width: 960px;
-  width: 100%;
+  max-width: 960px; /* Keep the same max width */
+  width: 100%; /* Ensure container fits within screen */
   margin: 0 auto;
   padding: 20px 0;
-  box-sizing: border-box;
-  animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+  box-sizing: border-box; /* Include padding and border in width */
 }
 
 /* Navigation Bar */
 nav {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Set background to white */
   padding: 10px 0;
   text-align: center;
-  color: #000733;
-  animation: fadeIn 1s ease-in-out; /* Fade-in for navigation */
+  color: #000733; /* Ensure text (and the pipe) is colored correctly */
 }
 
 nav a {
-  color: #000733;
+  color: #000733; /* Set text color for links */
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1.2em;
-  margin: 0 10px;
-  text-transform: none; /* Normal text case */
+  margin: 0 10px; /* Adjust margin */
+  text-transform: none; /* Keep the titles in normal case */
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Underline links on hover */
 }
 
 nav span {
   display: inline-block;
-  font-size: 22px; /* Pipe separator size */
+  font-size: 22px; /* Increase size of the pipe */
   color: #000733; /* Pipe separator color */
   font-weight: bold;
-  line-height: 0.7em;
+  line-height: 0.7em; /* Adjust line height */
 }
 
-/* Videos with Fade-in */
-video {
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards; /* Fade-in for videos */
+/* Top Section */
+.header {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif; /* Font for your name */
+  font-size: 3.5em; /* Enlarged name */
+  margin-bottom: 10px;
+  text-transform: uppercase; /* All caps for name */
+}
+
+.header p {
+  color: #d1d1d1; /* Light gray text */
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+/* Introduction */
+.intro {
+  text-align: center;
+  padding: 0px 0;
+}
+
+.intro p {
+  font-size: 1.2em;
+  color: #d1d1d1;
+  line-height: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 65px;
 }
 
 /* Project Section */
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Poppins font for section titles */
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -76,14 +90,22 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  gap: 0px;
+  gap: 0px; /* Reduced gap between blocks */
+  flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
 }
 
 .project {
-  width: 33.2%;
+  width: 33.2%; /* Keeping the size of the boxes the same */
   padding: 10px;
-  box-sizing: border-box;
-  border: 0.3px solid #444444;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  border: 0.3px solid #444444; /* Thinner dark grey outline */
+}
+
+.project video {
+  width: 100%;
+  height: auto; /* Maintain video ratio */
+  object-fit: contain; /* Preserves aspect ratio */
+  margin-bottom: 5px; /* Tighter gap below video */
 }
 
 .project h3 {
@@ -112,7 +134,7 @@ h2 {
 
 .major-project img {
   width: 100%;
-  height: auto;
+  height: auto; /* Normal image size */
   object-fit: contain;
   margin-bottom: 5px;
 }
@@ -141,8 +163,8 @@ h2 {
   }
 
   .container {
-    width: 100%;
-    padding: 10px; /* Reduce padding on mobile */
+    width: 100%; /* Ensure container fits within the screen */
+    padding: 10px; /* Reduce padding */
   }
 
   .projects {
@@ -150,8 +172,14 @@ h2 {
   }
 
   .project {
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 20px; /* Add spacing between stacked projects */
+  }
+
+  /* Ensure images and videos fit within their containers */
+  .project img, .project video {
     width: 100%;
-    margin-bottom: 20px;
+    height: auto;
   }
 
   nav a {
@@ -159,14 +187,14 @@ h2 {
   }
 
   h1 {
-    font-size: 2.5em; /* Smaller heading on mobile */
+    font-size: 2.5em; /* Reduce heading size for mobile */
   }
 
   h2 {
-    font-size: 1.8em; /* Smaller section titles on mobile */
+    font-size: 1.8em; /* Reduce section title size */
   }
 
   .intro p, .project p, .major-project p {
-    font-size: 1em; /* Smaller paragraph font on mobile */
+    font-size: 1em; /* Reduce paragraph font size */
   }
 }
