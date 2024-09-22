@@ -1,5 +1,4 @@
-/* styles.css */
-
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #000733; /* Dark navy background */
@@ -36,13 +35,12 @@ nav a:hover {
   text-decoration: underline; /* Underline links on hover */
 }
 
-/* Optional: Ensure the pipe inherits the color */
 nav span {
-  display: inline-block; /* Ensure it behaves like text but can be styled separately */
+  display: inline-block;
   font-size: 22px; /* Increase size of the pipe */
   color: #000733; /* Pipe separator color */
-  font-weight: bold; /* Make the pipe bold */
-  line-height: 0.7em; /* Adjust line height if necessary */
+  font-weight: bold;
+  line-height: 0.7em; /* Adjust line height */
 }
 
 /* Top Section */
@@ -153,4 +151,45 @@ h2 {
   line-height: 1.5em;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+
+  /* Adjust container for mobile */
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Stack projects vertically on mobile */
+  .projects {
+    display: block;
+  }
+
+  .project {
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 20px;
+  }
+
+  /* Make fonts smaller on mobile */
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  nav a {
+    font-size: 1em; /* Slightly smaller font for mobile */
+  }
+
+  .project h3 {
+    font-size: 1.1em;
+  }
+
+  .intro p, .project p, .major-project p {
+    font-size: 1em;
+  }
 }
