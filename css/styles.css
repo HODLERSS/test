@@ -44,7 +44,24 @@ nav span {
   font-weight: bold;
   line-height: 0.7em; /* Adjust line height */
 }
+a {
+  color: inherit; /* This will make the link color inherit from the surrounding text */
+  text-decoration: none; /* Remove default underline */
+}
 
+a:hover {
+  text-decoration: underline; /* Add underline only on hover */
+}
+
+/* Specific Project Title Styling */
+.projects a {
+  color: inherit; /* Ensure project links use the same color as the surrounding text */
+  text-decoration: none; /* No underline initially */
+}
+
+.projects a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
 /* Top Section */
 .header {
   text-align: center;
