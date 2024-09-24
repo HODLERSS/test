@@ -65,7 +65,7 @@ a:hover {
 /* Top Section */
 
 .projects + .projects {
-  margin-top: 5px; /* Reduces the gap between the two rows of projects */
+  margin-top: 3px; /* Reduces the gap between the two rows of projects */
 }
 
 .header {
@@ -111,7 +111,7 @@ h2 {
 .projects {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   gap: 0px; /* Reduced gap between blocks */
   flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
 }
