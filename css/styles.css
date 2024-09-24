@@ -65,7 +65,7 @@ a:hover {
 /* Top Section */
 
 .projects + .projects {
-  margin-top: 3px; /* Reduces the gap between the two rows of projects */
+  margin-top: 10px; /* Reduces the gap between the two rows of projects */
 }
 
 .header {
