@@ -63,6 +63,11 @@ a:hover {
   text-decoration: underline; /* Underline on hover */
 }
 /* Top Section */
+
+.projects + .projects {
+  margin-top: 5px; /* Reduces the gap between the two rows of projects */
+}
+
 .header {
   text-align: center;
   padding: 50px 0;
