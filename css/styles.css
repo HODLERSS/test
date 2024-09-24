@@ -133,6 +133,25 @@ h2 {
   margin-right: 15px;
 }
 
+/* h4 Styling for Detailed Project Titles */
+.project h4 {
+  font-family: 'Poppins', sans-serif; /* Ensure font consistency */
+  font-size: 1.2em; /* Slightly smaller than h3 */
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: #ffffff; /* White text color for visibility on dark background */
+}
+
+.project h4 a {
+  color: inherit; /* Inherit color from surrounding text */
+  text-decoration: none; /* Remove underline initially */
+}
+
+.project h4 a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
 .project p {
   color: #d1d1d1;
   font-size: 1em;
