@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minjae Lee - Personal Projects</title>
+  <title>Minjae Lee - Professional Projects</title>
 
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
-  
-  <!-- Link to External CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  
-</head>
-<body>
 
+  <!-- Link to External CSS File -->
+  <link rel="stylesheet" href="css/styles.css">
+<style>
+    body {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body onload="document.body.classList.add('loaded');">
   <!-- Navigation Bar -->
 <nav>
   <a href="index.html">Professional</a> 
@@ -24,9 +31,13 @@
 
   <!-- Top Section with Contact Info -->
   <div class="container">
-    <div class="header">
-      <h1>MINJAE LEE <a href="https://www.linkedin.com/in/minjaelee2" target="_blank"><img src="assets/icons/In-White-72.png" alt="LinkedIn" style="width: 40px; height: 40px; margin-left: 3px; vertical-align: 1px;"></a></h1>
-      <p>Email: <a href="mailto:minjae.m.lee@gmail.com" style="color: #00bfff;">minjae.m.lee@gmail.com</a></p>
+    <div class="header" style="display: flex; flex-direction: column; align-items: center;">
+      <h1>MINJAE LEE</h1>
+      
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+      <a href="mailto:minjae.m.lee@gmail.com" target="_blank"><img src="assets/icons/email.png" alt="Email" style="width: 1.5em; height: 1.5em; margin-right: 10px;"></a>
+      <a href="https://www.linkedin.com/in/minjaelee2" target="_blank"><img src="assets/icons/In-White-72.png" alt="LinkedIn" style="width: 1.5em; height: 1.5em;"></a>
     </div>
 
     <!-- Introduction -->
