@@ -28,7 +28,7 @@ nav a {
   color: #000733; /* Set text color for links */
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.0em;
   margin: 0 10px; /* Adjust margin */
   text-transform: none; /* Keep the titles in normal case */
 }
