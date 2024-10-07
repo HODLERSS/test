@@ -77,6 +77,7 @@ a:hover {
   font-family: 'Poppins', sans-serif; /* Font for your name */
   font-size: 3.5em; /* Enlarged name */
   margin-bottom: 0px;
+  margin-top: 1em;
   text-transform: uppercase; /* All caps for name */
 }
 
