@@ -118,7 +118,7 @@ h2 {
 }
 
 .project {
-  width: 32.5%; /* Keeping the size of the boxes the same */
+  width: 31.8%; /* Keeping the size of the boxes the same */
   padding: 0px;
   box-sizing: border-box; /* Ensure padding doesn't cause overflow */
   border: 0.3px solid #444444; /* Thinner dark grey outline */
