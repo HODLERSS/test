@@ -127,7 +127,7 @@ h2 {
   width: 100%;
   height: auto; /* Maintain video ratio */
   object-fit: contain; /* Preserves aspect ratio */
-  margin-bottom: 5px; /* Tighter gap below video */
+  margin: 0; 
 }
 
 .project h3 {
