@@ -1,160 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minjae Lee</title>
-  <!-- Favicon Link -->
-  <link rel="icon" type="image/png" href="assets/icons/favicon.ico">
-  
-  <!-- Open Graph meta tags for WhatsApp -->
-  <meta property="og:title" content="Minjae Lee ">
-  <meta property="og:description" content="Minjae Lee, a strategic and entrepreneurial leader with expertise in data science, blockchain, and AI. Learn more about his work and projects.">
-  <meta property="og:image" href="assets/icons/favicon.ico">
-  <meta property="og:url" content="minjae.co">
-  <meta property="og:type" content="website">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L1W3TH1LBV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-L1W3TH1LBV');
-  </script>
-
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap">
-
-  <!-- Link to External CSS File -->
-  <link rel="stylesheet" href="css/styles.css">
-<style>
-    nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white; /* Adjust to your preferred background color */
-    z-index: 1000; /* Ensures it stays above other elements */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-    padding: 10px 0;
-    text-align: center; /* Center-align navigation links */
-    }
-    body {
-      opacity: 0;
-      transition: opacity 1s ease-in;
-    }
-    body.loaded {
-      opacity: 1;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minjae Lee</title>
+<meta name="description" content="Minjae Lee, Head of Product leading MARA Cloud at MARA Holdings. Previously Corporate Strategy: M&A, mining optimization, market intelligence. Tuck MBA. Austin, Texas.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css?v=37">
 </head>
-<body onload="document.body.classList.add('loaded');">
-  <!-- Navigation Bar -->
-<nav>
-  <a href="./">Professional</a>
-  <span>|</span>
-  <a href="personal.html">Personal</a>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="site caps" href="./"><svg viewBox="7 3.5 50 50" width="20" height="20" aria-hidden="true"><g fill="#4E6E8E"><path d="M32 7 C39.5 12 41 23 32 30 C23 23 24.5 12 32 7 Z"/><path d="M32 7 C39.5 12 41 23 32 30 C23 23 24.5 12 32 7 Z" transform="rotate(120 32 33)"/><path d="M32 7 C39.5 12 41 23 32 30 C23 23 24.5 12 32 7 Z" transform="rotate(240 32 33)"/></g></svg>Minjae Lee</a>
+    <nav aria-label="Sections">
+      <ul class="caps">
+        <li><a href="./" aria-current="page">Professional</a></li>
+        <li class="has-sub"><a href="passion.html">Personal</a>
+          <ul class="sub">
+            <li><a href="passion.html">Passions</a></li>
+            <li><a href="family.html">Family</a></li>
+          </ul>
+        </li>
+        <li><a href="education.html">Education</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="band">
+  <h1>Professional</h1>
+</section>
+
+<nav class="pagenav" aria-label="On this page">
+  <a href="#inference">MARA</a>
+  <a href="#amazon">Amazon</a>
+  <a href="#blockchain">Ground X</a>
+  <a href="#data">TMON</a>
+  <a href="#dsi">DSI</a>
+  <a href="#military">Army</a>
 </nav>
 
-  <!-- Top Section with Contact Info -->
-  <div class="container">
-    <div class="header" style="display: flex; flex-direction: column; align-items: center;">
-      <h1>MINJAE LEE</h1>
-      
-    </div>
-    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
-      <a href="mailto:mj@minjae.co" target="_blank"><img src="assets/icons/email5.svg" alt="Email" style="width: 1.6em; height: 1.6em; margin-right: 10px;"></a>
-      <a href="https://www.linkedin.com/in/minjaelee2" target="_blank"><img src="assets/icons/In-White-72.png" alt="LinkedIn" style="width: 1.5em; height: 1.5em;"></a>
-    </div>
-    <!-- Added Image -->
-    <div style="text-align: center;">
-      <img src="assets/images/minjaelee_profile.png" 
-          alt="Minjae Lee" 
-          style="max-width: 315px; max-height: 315px; width: auto; height: auto; 
-                  border-radius: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-    </div>
+<main class="wrap">
 
-    <!-- Introduction -->
-    <div class="intro" style="margin-top: 40px;">
-      <p>I’m Minjae Lee, a strategic and entrepreneurial leader with expertise in data science, blockchain, Bitcoin, and AI. I focus on driving impactful growth and creating sustainable value across the organization. I graduated from the Tuck School of Business at Dartmouth and currently lead Strategy team at MARA Holdings. I live in Austin, TX.</p>
+  <div class="summary with-photo">
+    <figure class="photo">
+      <a class="lightbox" href="assets/images/portrait.jpg?v=4" data-cap="Minjae Lee"><img src="assets/images/portrait.jpg?v=4" alt="Minjae Lee" decoding="async"></a>
+    </figure>
+    <div class="body">
+      <p>I'm Minjae Lee, leading <a href="https://cloud.mara.com" target="_blank" rel="noopener">MARA Cloud</a> at MARA Holdings as Head of Product. My work spans product management, engineering, marketing, and commercialization. I own the ultimate success of the product, represented by commercial success in revenue, leading a cross-functional team.</p>
+      <p>Previously, I was a Senior Manager on the Corporate Strategy team, working on data center acquisitions and M&amp;A, market intelligence, and Bitcoin mining optimization and economics analysis. I graduated from the Tuck School of Business at Dartmouth and live in Austin, Texas.</p>
     </div>
+  </div>
 
-    <!-- Professional Work Section -->
-    <h2>Current Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/videos/forecast400.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>Market Forecasting</h3>
-        <p>I forecast Bitcoin price and mining economics at MARA Holdings, collaborating closely with the Finance team. I lead weekly discussions on Bitcoin price and hashprice trends, covering macroeconomic factors and stock markets to provide actionable insights for management.</p>
-      </div>
+  <div class="tl-scroll">
+  <div class="timeline" aria-label="Timeline">
+    <a href="#military" style="left:0.5%;width:9%" class="m-prof range">Army<small>2011 – 2012</small></a>
+    <a href="#data" style="left:10.3%;width:8.4%" class="m-prof range">TMON<small>2017 – 2018</small></a>
+    <a href="#blockchain" style="left:19.5%;width:23.8%" class="m-prof range">Ground X<small>2018 – 2021</small></a>
+    <a href="#amazon" style="left:44.1%;width:12%" class="m-prof range">Amazon<small>2022</small></a>
+    <a href="#inference" style="left:56.9%;width:42.6%" class="m-prof range em">MARA<small>2023 –</small></a>
+  </div>
+  </div>
 
-      <div class="project">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/mna30.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>M&A</h3>
-        <p>I led three data center acquisitions in 2024, totaling 590MW with a purchase price of ~$260 million. I led due diligence across teams, evaluated opportunities, provided recommendations to management, and negotiated with counterparties. These acquisitions are now key to our cash flow.</p>
-      </div>
+  <div class="entries">
 
-      <div class="project">
-        <video autoplay muted loop playsinline>
-          <source src="assets/videos/vc30.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>Venture Capital</h3>
-        <p>I am working for venture initiatives at MARA Holdings, focusing on developing our investment thesis, writing investment memos, and supporting decision-making with the management team. My first deal was to lead a $2 million investment in an alternative energy start-up as part of its $3 million seed round.</p>
+    <div class="entry" id="inference">
+      <h2>MARA · AI Inference<span class="when">2025 –</span></h2>
+      <div class="body">
+        <p>I built MARA's AI inference strategy from scratch, and now lead the business across compute purchase and operation, marketing and commercial strategy, and the product and technology roadmap. Our core offering is <a href="https://cloud.mara.com" target="_blank" rel="noopener">MARA Cloud</a>: serverless and dedicated inference compute with high token throughput.</p>
+        <p>I led key purchases of compute, $50+ million to date, spanning NVIDIA and several inference-specialized compute, along with partnerships with OpenRouter and other key players.</p>
+        <p>The photo below is from our AI offsite at one of our biggest data centers in Texas. We gathered to set our plan and strategy for AI inference, and it marked the moment we began pivoting some of our data centers to AI.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/granbury-offsite-2025.jpg" data-cap="Granbury AI offsite TX, 2025"><img src="assets/images/granbury-offsite-2025.jpg" alt="Granbury AI offsite TX, 2025" loading="lazy" decoding="async"></a>
+        </figure>
       </div>
     </div>
 
-    <h2>Other Key Experiences</h2>
-    <div class="projects">
-      <div class="project">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/videos/blockchain30.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>Blockchain & Web3</h3>
-        <p>I was an early member of Ground X, building <a href="https://www.klaytn.foundation/" target="_blank" style="text-decoration: none; color: #00796B;">Klaytn</a> (rebranded as Kaia), a layer-1 blockchain platform launched in 2019. I led a team of 10+ engineers, developed the developer ecosystem, and launched products including Klip wallet, Klaytn API service, and an NFT marketplace, with over a million active users.</p>
-      </div>
-
-      <div class="project">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/videos/ds30.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>Data Science</h3>
-        <p>My career began as a data scientist at TMON, one of Korea's leading e-commerce platforms, where I developed a product recommendation engine and pricing algorithm. Currently, I advise our data science team in optimizing our Bitcoin mining operations.</p>
-      </div>
-
-      <div class="project">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/videos/llm30.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <h3>LLM</h3>
-        <p>I believe LLM is the most innovative technology since the computer and the internet. It will continue to transform how we work. I've built several LLM agents for market intelligence and strategy research, and they have improved our team's productivity and work quality by at least 10x.</p>
-      </div>
-    </div>
-    <!-- Contact Section -->
-    <div class="contact" style="text-align: center; margin-top: 240px; margin-bottom: 160px;">
-      <h2>Want to Learn More?</h2>
-      <p>Contact me and we can chat!</p>
-      <a href="mailto:mj@minjae.co" class="text-black bg-stone-100 hover:bg-stone-200 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 dark:hover:bg-stone-200 dark:focus:ring-stone-800 industry focus:ring-4 focus:ring-blue-600" style="color: #000733; background-color: #ffffff; border: none; padding: 10px 20px; cursor: pointer; font-family: 'Poppins', sans-serif; margin-top: 17px; display: inline-block; border-radius: 3px;">Contact Me</a>
-      
-      <!-- Icons below the contact button -->
-      <div style="display: flex; justify-content: center; align-items: center; margin-top: 80px;">
-        <a href="mailto:mj@minjae.co" target="_blank"><img src="assets/icons/email5.svg" alt="Email" style="width: 1.6em; height: 1.6em; margin-right: 10px;"></a>
-        <a href="https://www.linkedin.com/in/minjaelee2" target="_blank"><img src="assets/icons/In-White-72.png" alt="LinkedIn" style="width: 1.5em; height: 1.5em;"></a>
+    <div class="entry" id="mna">
+      <h2>MARA · M&amp;A<span class="when">2023 – 2024</span></h2>
+      <div class="body">
+        <p>I led three data center acquisitions in 2024, totaling 590MW at a purchase price of about $260 million: 390MW across <a href="https://ir.mara.com/news-events/press-releases/detail/1335/marathon-digital-holdings-enters-definitive-agreement-to-acquire-multiple-bitcoin-mining-sites-for-179-million" target="_blank" rel="noopener">Granbury, TX</a> and <a href="https://ir.mara.com/news-events/press-releases/detail/1335/marathon-digital-holdings-enters-definitive-agreement-to-acquire-multiple-bitcoin-mining-sites-for-179-million" target="_blank" rel="noopener">Kearney, NE</a>, and a 200MW data center adjacent to a wind farm in <a href="https://ir.mara.com/news-events/press-releases/detail/1347/marathon-digital-holdings-enters-definitive-agreement-to-acquire-200-megawatt-bitcoin-mining-data-center-adjacent-to-a-wind-farm" target="_blank" rel="noopener">Garden City, TX</a>. I ran due diligence across teams and financial modeling, made recommendations to management, and supported negotiation with counterparties.</p>
       </div>
     </div>
 
+    <div class="entry" id="venture">
+      <h2>MARA · Venture Capital<span class="when">2024</span></h2>
+      <div class="body">
+        <p>The first venture investment I led was $2 million into a solar-powered Bitcoin mining tech firm, leading its seed round: investment thesis, financial modeling, cap table analysis, exit scenarios, and on-site due diligence.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/founding-team-illustrated.jpg?v=2" data-cap="With the founding team, 2024, illustrated"><img src="assets/images/founding-team-illustrated.jpg?v=2" alt="With the founding team, 2024, illustrated" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
 
+    <div class="entry" id="strategy">
+      <h2>MARA · Product &amp; Corporate Strategy<span class="when">2023 –</span></h2>
+      <div class="body">
+        <p>I built and managed a strategy team of six: two strategy analysts, one AI engineer, and three strategy interns.</p>
+        <ul>
+          <li>Bitcoin price forecasting (<a href="assets/docs/how-to-forecast-bitcoin.pdf" target="_blank" rel="noopener">How To Forecast Bitcoin Price.pdf</a>)</li>
+          <li>Bitcoin mining optimization through ML algorithms</li>
+          <li>Market intelligence and competitive analysis</li>
+          <li>AI agent for market intelligence (web-app and Slackbot); hired one AI engineer</li>
+          <li>AI Lunch &amp; Learn: hosted 5 sessions with ~50 average attendees across the company, on AI tools, LLMs, prompts, and harnesses</li>
+        </ul>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/strategy-team-2025.jpg" data-cap="Strategy team escape room, Austin offsite 2025"><img src="assets/images/strategy-team-2025.jpg" alt="Strategy team escape room, Austin offsite 2025" loading="lazy" decoding="async"></a>
+        </figure>
+        <div class="thumbs">
+          <a class="lightbox" href="assets/images/impact-award-2024-2.jpg" data-cap="Impact Award, 2024"><img src="assets/images/thumbs/impact-award-2024-2.jpg" alt="Impact Award, 2024" loading="lazy" decoding="async"></a>
+          <a class="lightbox" href="assets/images/impact-award-2024-1.jpg" data-cap="Impact Award, 2024"><img src="assets/images/thumbs/impact-award-2024-1.jpg" alt="Impact Award, 2024" loading="lazy" decoding="async"></a>
+          <a class="lightbox" href="assets/images/strategy-team-2025-2.jpg" data-cap="Strategy Chicago Offsite, 2025"><img src="assets/images/thumbs/strategy-team-2025-2.jpg" alt="Strategy Chicago Offsite, 2025" loading="lazy" decoding="async"></a>
+          <a class="lightbox" href="assets/images/strategy-team-2024.jpg" data-cap="Strategy team offsite, Nashville 2024"><img src="assets/images/thumbs/strategy-team-2024.jpg" alt="Strategy team offsite, Nashville 2024" loading="lazy" decoding="async"></a>
+          <a class="lightbox" href="assets/images/team-bbq-2024.jpg" data-cap="Team Korean BBQ night, Austin leadership meeting 2024"><img src="assets/images/thumbs/team-bbq-2024.jpg" alt="Team Korean BBQ night, Austin leadership meeting 2024" loading="lazy" decoding="async"></a>
+        </div>
+      </div>
+    </div>
 
+    <div class="entry" id="amazon">
+      <h2>Amazon · Technical PM<span class="when">2022</span></h2>
+      <div class="body">
+        <p>An MBA internship in Seattle as a senior technical product manager, working on distribution center technology.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/amazon-hq.jpg" data-cap="Amazon headquarters, Seattle"><img src="assets/images/amazon-hq.jpg" alt="Amazon headquarters, Seattle" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry" id="blockchain">
+      <h2>Ground X · Blockchain &amp; Web3<span class="when">2018 – 2021</span></h2>
+      <div class="body">
+        <p>I was an early member of Ground X, building Klaytn, a layer-1 blockchain platform launched in 2019. I led a team of 10+ engineers and launched Klip wallet, Klaytn API service, and an NFT marketplace, with over a million active users.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/klaytn-launch.jpg" data-cap="Klaytn launch, 2019"><img src="assets/images/klaytn-launch.jpg" alt="Klaytn launch, 2019" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry" id="data">
+      <h2>TMON · Data Science<span class="when">2017 – 2018</span></h2>
+      <div class="body">
+        <p>My career began as a data scientist at TMON, one of Korea's leading e-commerce platforms, building ML engines for product recommendation and pricing optimization.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/tmon-2017-2.jpg" data-cap="TMON, 2017"><img src="assets/images/tmon-2017-2.jpg" alt="TMON, 2017" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry" id="dsi">
+      <h2>DSI · Research Internship<span class="when">2013</span></h2>
+      <div class="body">
+        <p>Research intern at the Data Storage Institute (DSI) in the National University of Singapore (NUS), studying airflow's impact on hard disk drive performance.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/singapore-internship.jpg?v=3" data-cap="With professors at DSI, Singapore"><img src="assets/images/singapore-internship.jpg?v=3" alt="With professors at DSI, Singapore" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
+
+    <div class="entry" id="military">
+      <h2>Army · Squad Leader<span class="when">2011 – 2012</span></h2>
+      <div class="body">
+        <p>Squad leader in the Republic of Korea Army. Served 1 year and 10 months.</p>
+        <figure class="photo">
+          <a class="lightbox" href="assets/images/military-2012.jpg?v=4" data-cap="Military service, 2012"><img src="assets/images/military-2012.jpg?v=4" alt="Military service, 2012" loading="lazy" decoding="async"></a>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+
+  <nav class="nextpage" aria-label="Continue">
+    <a href="passion.html">Next: Passions →</a>
+  </nav>
+
+</main>
+
+<section class="contact" id="contact">
+  <h2>Let's Connect!</h2>
+  <div class="tick" aria-hidden="true" style="margin-top:18px"></div>
+  <div class="links">
+    <a href="mailto:mj@minjae.co">Email</a>
+    <a href="https://www.linkedin.com/in/minjaelee2" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>minjae.co · Austin, Texas · © 2026 Minjae Lee</p>
+</footer>
+
+<script src="assets/lightbox.js?v=11" defer></script>
 </body>
 </html>

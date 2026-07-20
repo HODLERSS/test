@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTC 2026 Keynote - Key Insights for AI Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0A0A0A; --surface: #141414; --border: #2A2A2A; --text: #E8E8E8;
+  --text-muted: #777777; --text-dim: #555555; --accent: #00D084; --accent2: #38E8A0;
+  --label-bg: #1A1A1A; --red: #FF4C4C;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #000; color: var(--text); font-family: 'Inter', sans-serif; overflow: hidden; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; }
+.deck { width: 100vw; height: calc(100vw * 9 / 16); max-height: 100vh; max-width: calc(100vh * 16 / 9); position: relative; background: var(--bg); overflow: hidden; }
+.slide { width: 100%; height: 100%; display: none; flex-direction: column; padding: 48px 60px 60px 60px; position: absolute; top: 0; left: 0; }
+.slide.active { display: flex; }
+.headline { font-size: 30px; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 14px; max-width: 92%; }
+.headline-rule { width: 100%; height: 3px; background: var(--accent); margin-bottom: 24px; border-radius: 1px; }
+.cover-title { font-size: 42px; font-weight: 800; color: var(--text); line-height: 1.15; margin-bottom: 8px; }
+.cover-subtitle { font-size: 20px; font-weight: 400; color: var(--text-muted); margin-bottom: 6px; }
+.cover-date { font-size: 13px; color: var(--text-dim); margin-top: 12px; }
+.exec-rows { display: flex; flex-direction: column; justify-content: center; gap: 20px; flex: 1; }
+.exec-row { display: grid; grid-template-columns: 210px 1fr; gap: 28px; align-items: center; }
+.exec-label { background: var(--label-bg); border: 1px solid var(--border); padding: 28px 20px; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 110px; }
+.exec-label-text { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.exec-content { padding: 4px 0; }
+.exec-content ul { list-style: disc; padding-left: 20px; }
+.exec-content li { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 6px; }
+.exec-content li strong { font-weight: 700; }
+.status-tag { display: inline-block; padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; background: var(--label-bg); border: 1px solid var(--border); color: var(--text); margin-bottom: 16px; }
+.visual-notes { display: grid; grid-template-columns: 62fr 38fr; gap: 0; flex: 1; }
+.visual-area { background: var(--surface); border: 1px solid var(--border); border-right: none; border-radius: 4px 0 0 4px; padding: 20px 24px; display: flex; flex-direction: column; overflow: hidden; }
+.visual-title, .notes-header { font-size: 13px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 1px; padding-bottom: 12px; border-bottom: 2px solid var(--border); margin-bottom: 16px; line-height: 1; }
+.notes-panel { display: flex; flex-direction: column; padding: 20px 24px; border: 1px solid var(--border); border-left: none; border-radius: 0 4px 4px 0; background: var(--surface); }
+.notes-panel ol { list-style: none; padding: 0; counter-reset: note; }
+.notes-panel ol li { counter-increment: note; font-size: 13px; color: var(--text); line-height: 1.55; margin-bottom: 14px; padding-left: 24px; position: relative; }
+.notes-panel ol li::before { content: counter(note) "."; position: absolute; left: 0; font-weight: 700; color: var(--accent); font-size: 13px; }
+.notes-panel ol li strong { font-weight: 700; }
+.notes-question { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+.notes-question-label { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.notes-question-text { font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.5; }
+.body-text { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 8px; }
+.body-text strong { font-weight: 700; }
+sup { font-size: 0.7em; color: var(--accent); font-weight: 600; vertical-align: super; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
+.chart-area { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 20px; }
+.chart-label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
+.chart-wrap { position: relative; height: 260px; }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.data-table th { font-size: 12px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; padding: 10px 14px; background: var(--label-bg); border: 1px solid var(--border); }
+.data-table td { font-size: 13px; color: var(--text); padding: 10px 14px; border: 1px solid var(--border); }
+.data-table td.mono { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+.data-table td.accent { color: var(--accent); font-weight: 600; }
+.big-number { font-family: 'JetBrains Mono', monospace; font-size: 48px; font-weight: 700; color: var(--accent); line-height: 1; }
+.metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; }
+.panels-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px; display: flex; flex-direction: column; }
+.panel-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 6px; }
+.panel-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+.panel-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+.panel-rule { width: 100%; height: 2px; background: var(--border); margin-bottom: 16px; }
+.panel ul { list-style: disc; padding-left: 18px; }
+.panel li { font-size: 13px; color: var(--text); line-height: 1.55; margin-bottom: 8px; }
+.panel li strong { font-weight: 700; }
+.section-tracker { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; align-items: center; font-size: 11px; color: var(--text-dim); letter-spacing: 0.3px; line-height: 1; }
+.section-tracker span { padding: 0; }
+.section-tracker .active-section { color: var(--text); font-weight: 700; }
+.section-tracker .sep { color: var(--border); }
+.author-mark { position: absolute; bottom: 14px; left: 60px; font-size: 11px; font-weight: 500; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; line-height: 1; }
+.page-num { position: absolute; bottom: 14px; right: 60px; font-size: 11px; font-weight: 500; color: var(--text-dim); line-height: 1; }
+.footnotes { position: absolute; bottom: 44px; left: 60px; right: 200px; font-size: 9px; color: var(--text-dim); line-height: 1.5; }
+.footnotes a { text-decoration: none; color: var(--text-dim); }
+.footnotes a:hover { text-decoration: underline; color: var(--accent); }
+.nav { position: absolute; top: 16px; right: 60px; display: flex; gap: 6px; align-items: center; z-index: 100; opacity: 0; transition: opacity 0.3s; }
+.deck:hover .nav { opacity: 1; }
+.nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.2s; border: none; }
+.nav-dot.active { background: var(--accent); transform: scale(1.3); }
+.ctrl-btn { position: fixed; top: 12px; z-index: 200; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; font-family: 'JetBrains Mono', monospace; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text-dim); transition: all 0.15s; }
+.ctrl-btn:hover { color: var(--accent); border-color: var(--accent); }
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: none !important; width: 1280px; height: auto; display: block; overflow: visible; }
+  .deck { width: 1280px; height: auto; max-width: none; max-height: none; overflow: visible; position: static; }
+  .slide { display: flex !important; position: relative !important; width: 1280px !important; height: 720px !important; page-break-after: always; background: var(--bg) !important; }
+  .nav, .ctrl-btn { display: none !important; }
+}
+</style>
+</head>
+<body>
+<button class="ctrl-btn" id="aspectBtn" onclick="toggle169()" style="right:90px;">16:9</button>
+<button class="ctrl-btn" onclick="exportPDF()" style="right:12px;">PDF</button>
+
+<div class="deck" id="deck">
+
+  <!-- SLIDE 1: COVER -->
+  <div class="slide active" id="slide-1">
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <div class="cover-title">GTC 2026: The inference inflection, $1T demand, and the agent OS</div>
+      <div class="cover-subtitle">GTC 2026 Keynote: Key Insights for AI Strategy</div>
+      <div class="cover-date">March 16, 2026 | San Jose, CA</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: EXEC SUMMARY -->
+  <div class="slide" id="slide-2">
+    <div class="headline">The inference inflection, token factory economics, and the agent OS revolution will reshape AI infrastructure planning</div>
+    <div class="headline-rule"></div>
+    <div class="exec-rows">
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Inference<br>Inflection</span></div>
+        <div class="exec-content"><ul>
+          <li>Computing demand increased <strong>1,000,000x in two years</strong><sup>1</sup> driven by reasoning + agentic workloads</li>
+          <li>Huang raised demand guidance from $500B to <strong>at least $1T through 2027</strong>, up 2x year-over-year</li>
+          <li>AI shifted from "ask" to <strong>"create, do, build"</strong> with Claude Code cited as the first agentic model</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Token Factory<br>Economics</span></div>
+        <div class="exec-content"><ul>
+          <li>Data centers are now <strong>"factories producing tokens"</strong> under fixed power constraints (1GW = $40B)</li>
+          <li>Vera Rubin achieves <strong>350x token generation improvement</strong> in two years vs. Moore's Law 1.5x</li>
+          <li>Token pricing will segment into <strong>5 tiers from free to $150/M tokens</strong>, creating a new commodity market</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Agent<br>Revolution</span></div>
+        <div class="exec-content"><ul>
+          <li>OpenClaw declared <strong>"most popular open source project in human history"</strong>, surpassing Linux adoption pace</li>
+          <li>Every SaaS company will become an <strong>AaaS (Agent-as-a-Service) company</strong> per Huang</li>
+          <li>Engineers will receive <strong>"annual token budgets"</strong> alongside salary, already a recruiting tool in Silicon Valley</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footnotes"><sup>1</sup> Jensen Huang, GTC 2026 Keynote, March 16, 2026. Estimate based on 10,000x compute per task and 100x usage growth.</div>
+  </div>
+
+  <!-- SLIDE 3: TOKEN FACTORY ECONOMICS (data slide) -->
+  <div class="slide" id="slide-3">
+    <div class="headline">Token pricing will segment into five commercial tiers as inference becomes a commodity market<sup>1</sup></div>
+    <div class="headline-rule"></div>
+    <div class="two-col">
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div class="big-number">$1T+</div>
+        <div class="metric-label">NVIDIA DEMAND FORECAST THROUGH 2027</div>
+        <p class="body-text" style="margin-top:20px;">Huang: "A 1GW factory costs $40B to build. Even with nothing on it, it's $40B in. You better make sure you put the best system on it."<sup>2</sup></p>
+        <p class="body-text">60% of NVIDIA revenue comes from top 5 hyperscalers. The other 40% spans sovereign clouds, enterprise, robotics, and edge.</p>
+      </div>
+      <div class="chart-area">
+        <div class="chart-label">Token Pricing Tiers ($/Million Tokens)</div>
+        <div class="chart-wrap"><canvas id="chart1"></canvas></div>
+      </div>
+    </div>
+    <div class="footnotes"><sup>1</sup> Jensen Huang, GTC 2026 Keynote &nbsp; <sup>2</sup> <a href="https://odaily.news" target="_blank">Odaily / Wall Street News</a>, March 16, 2026</div>
+  </div>
+
+  <!-- SLIDE 4: VERA RUBIN PERFORMANCE TABLE -->
+  <div class="slide" id="slide-4">
+    <div class="headline">Vera Rubin delivers 350x token generation improvement in two years, far outpacing Moore's Law<sup>1</sup></div>
+    <div class="headline-rule"></div>
+    <table class="data-table">
+      <thead><tr><th>Architecture</th><th>Year</th><th>Token Gen Rate (1GW)</th><th>Perf / Watt vs. Prior</th><th>Key Innovation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hopper H200</strong></td><td class="mono">2024</td><td class="mono">2M tok/s</td><td class="mono">Baseline</td><td>FP8 Transformer Engine, NVLink-4</td></tr>
+        <tr><td><strong>Grace Blackwell</strong></td><td class="mono">2025</td><td class="mono accent">~70M tok/s</td><td class="mono accent">35x</td><td>NVLink-72, NVFP4, Dynamo</td></tr>
+        <tr><td><strong>Vera Rubin</strong></td><td class="mono">2026</td><td class="mono accent">700M tok/s</td><td class="mono accent">350x</td><td>7 chips, 5 rack-scale computers, 3.6 exaflops</td></tr>
+        <tr><td><strong>Vera Rubin + Groq</strong></td><td class="mono">2026 Q3</td><td class="mono accent">700M+ tok/s</td><td class="mono accent">350x + new tiers</td><td>Disaggregated inference, LP30 SRAM accelerator</td></tr>
+        <tr><td><strong>Feynman</strong> (next gen)</td><td class="mono">2027+</td><td class="mono">TBD</td><td class="mono">TBD</td><td>LP40 LPU, ROSA CPU, CPO scale-up</td></tr>
+      </tbody>
+    </table>
+    <p class="body-text" style="margin-top:12px; color:var(--text-dim); font-size:12px;">Moore's Law would have delivered ~1.5x improvement over the same period. First Vera Rubin rack already running on Microsoft Azure.</p>
+    <div class="footnotes"><sup>1</sup> Jensen Huang, GTC 2026 Keynote, March 16, 2026. Semi-analysis validated 50x for Blackwell (higher than Huang's 35x claim).</div>
+  </div>
+
+  <!-- SLIDE 5: TWO PANELS - Infrastructure + Software Strategy -->
+  <div class="slide" id="slide-5">
+    <div class="headline">NVIDIA's strategy rests on two reinforcing pillars: vertically integrated hardware and horizontally open software</div>
+    <div class="headline-rule"></div>
+    <div class="panels-2">
+      <div class="panel">
+        <div class="panel-tag">HARDWARE STRATEGY</div>
+        <div class="panel-title">AI Factory as Product</div>
+        <div class="panel-subtitle">From chips to rack-scale systems to gigawatt facilities</div>
+        <div class="panel-rule"></div>
+        <ul>
+          <li><strong>Vera Rubin system</strong>: 7 chips, 5 rack types, 100% liquid cooled, 2-hour install vs. 2-day prior</li>
+          <li><strong>Groq integration</strong>: Disaggregated inference pairs high-throughput Rubin with low-latency Groq SRAM</li>
+          <li><strong>DSX platform</strong>: Digital twin for designing and operating AI factories at gigawatt scale</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="panel-tag">SOFTWARE STRATEGY</div>
+        <div class="panel-title">Open Models + Agent Stack</div>
+        <div class="panel-subtitle">From CUDAx libraries to NemoClaw enterprise agents</div>
+        <div class="panel-rule"></div>
+        <ul>
+          <li><strong>1,000+ CUDAx libraries</strong>: cuDF for structured data, cuVS for vectors, 100 new libraries announced at GTC</li>
+          <li><strong>6 open model families</strong>: Nemotron, Cosmos, GROOT, Alpamayo, BioNeMo, Earth-2 all at frontier</li>
+          <li><strong>NemoClaw</strong>: Enterprise-secure agent reference design with policy engine and privacy router</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footnotes">Source: Jensen Huang, GTC 2026 Keynote, March 16, 2026</div>
+  </div>
+
+  <!-- SLIDE 6: VISUAL + NOTES - Agent Revolution -->
+  <div class="slide" id="slide-6">
+    <div class="headline">OpenClaw represents a platform shift comparable to Linux, HTTP, and Kubernetes according to Huang</div>
+    <div class="headline-rule"></div>
+    <div class="visual-notes">
+      <div class="visual-area">
+        <div class="visual-title">Enterprise IT: Before and After Agents</div>
+        <div class="chart-wrap" style="flex:1;"><canvas id="chart2"></canvas></div>
+      </div>
+      <div class="notes-panel">
+        <div class="notes-header">Notes</div>
+        <ol>
+          <li><strong>OpenClaw = Agent OS</strong>: Resources, tools, file systems, LLM access, scheduling, sub-agents, multi-modal I/O</li>
+          <li><strong>SaaS to AaaS</strong>: Every software company becomes an Agent-as-a-Service provider, not just a tool vendor</li>
+          <li><strong>Token budgets</strong>: Engineers get annual token allowances (est. ~50% of base salary) to amplify productivity 10x</li>
+          <li><strong>Security concern</strong>: Agents access sensitive data, execute code, communicate externally. NemoClaw adds guardrails.</li>
+        </ol>
+        <div class="notes-question">
+          <div class="notes-question-label">Strategic question</div>
+          <div class="notes-question-text">"What is your OpenClaw strategy?" Jensen Huang posed this as the new CEO-level question for every company.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footnotes">Source: Jensen Huang, GTC 2026 Keynote. OpenClaw by Peter Steinberger. $150B VC investment in AI startups cited.</div>
+  </div>
+
+  <!-- SLIDE 7: WHAT THIS MEANS FOR AI INFRA TEAMS -->
+  <div class="slide" id="slide-7">
+    <div class="headline">Disaggregated inference, constrained Vera Rubin supply, and OpenClaw's rapid adoption will force infrastructure decisions by Q3</div>
+    <div class="headline-rule"></div>
+    <div class="exec-rows">
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Inference<br>Architecture</span></div>
+        <div class="exec-content"><ul>
+          <li>Disaggregated inference (prefill on GPU, decode on SRAM) is now <strong>NVIDIA's endorsed architecture</strong>, not a fringe idea</li>
+          <li>Teams running homogeneous GPU clusters should evaluate <strong>heterogeneous prefill/decode splits</strong> for 35x gains</li>
+          <li>KV cache management will become the <strong>critical bottleneck</strong> as context windows grow to millions of tokens</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Capacity<br>Planning</span></div>
+        <div class="exec-content"><ul>
+          <li>$1T demand through 2027 means <strong>GPU allocation will remain constrained</strong>. Spot pricing will keep rising.</li>
+          <li>Vera Rubin's 350x improvement changes unit economics: <strong>plan hardware refreshes around H2 2026</strong> timeline</li>
+          <li>Huang's 75/25 GPU/LPU allocation guidance gives <strong>a concrete starting point</strong> for mixed-silicon planning</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Platform<br>Strategy</span></div>
+        <div class="exec-content"><ul>
+          <li>NVIDIA's CUDAx + open models + NemoClaw stack is <strong>a full-stack play that competes with your platform layer</strong></li>
+          <li>OpenClaw adoption rate signals that <strong>the agent runtime standard may already be decided</strong>. Adapt or integrate.</li>
+          <li>Confidential computing and sovereign deployment are <strong>the new unlock for regulated enterprise revenue</strong></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footnotes">Analysis based on GTC 2026 Keynote. Targeted at AI infra engineers, ML platform leads, and AI strategy at frontier labs.</div>
+  </div>
+
+  <!-- SLIDE 8: CONCLUSION -->
+  <div class="slide" id="slide-8">
+    <div class="headline">Rethink inference architecture, own the agent runtime layer, and lock Vera Rubin capacity before Q3</div>
+    <div class="headline-rule"></div>
+    <div class="exec-rows">
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Rethink<br>Inference</span></div>
+        <div class="exec-content"><ul>
+          <li>Evaluate <strong>disaggregated prefill/decode architecture</strong> against your current homogeneous GPU clusters</li>
+          <li>Model your inference fleet as a <strong>tokens-per-watt factory</strong> with tiered pricing ($3 to $150/M tokens)</li>
+          <li>Benchmark your current cost/token against <strong>Vera Rubin's 350x curve</strong> to time your hardware refresh</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Own the<br>Agent Layer</span></div>
+        <div class="exec-content"><ul>
+          <li>Decide whether to <strong>build on, compete with, or integrate OpenClaw</strong> before the standard solidifies</li>
+          <li>NVIDIA's NemoClaw is a reference, not a lock-in. <strong>The policy engine is where your differentiation lives.</strong></li>
+          <li>Agent workloads will <strong>10x inference demand per user</strong>. Plan capacity for reasoning + tool-use token volume.</li>
+        </ul></div>
+      </div>
+      <div class="exec-row">
+        <div class="exec-label"><span class="exec-label-text">Secure<br>Capacity</span></div>
+        <div class="exec-content"><ul>
+          <li>Vera Rubin allocation is <strong>already constrained</strong>. First rack running on Azure. Lock in your position now.</li>
+          <li>Plan your <strong>networking topology</strong>: copper NVLink-72, optical NVLink-576, or CPO. NVIDIA is shipping all three.</li>
+          <li>Confidential computing unlocks <strong>regulated enterprise revenue</strong> that open-cloud deployments cannot reach.</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="footnotes">Source: Jensen Huang, GTC 2026 Keynote, March 16, 2026. <a href="https://www.nvidia.com/gtc/" target="_blank">nvidia.com/gtc</a></div>
+  </div>
+
+  <!-- PERSISTENT -->
+  <div class="author-mark">Minjae Lee</div>
+  <div class="section-tracker" id="sectionTracker">
+    <span>Cover</span><span class="sep">&bull;</span>
+    <span>Summary</span><span class="sep">&bull;</span>
+    <span>Economics</span><span class="sep">&bull;</span>
+    <span>Hardware</span><span class="sep">&bull;</span>
+    <span>Strategy</span><span class="sep">&bull;</span>
+    <span>Agents</span><span class="sep">&bull;</span>
+    <span>Impact</span><span class="sep">&bull;</span>
+    <span>Actions</span>
+  </div>
+  <div class="page-num" id="pageNum">1</div>
+  <div class="nav">
+    <div class="nav-dot active" onclick="goTo(0)"></div>
+    <div class="nav-dot" onclick="goTo(1)"></div>
+    <div class="nav-dot" onclick="goTo(2)"></div>
+    <div class="nav-dot" onclick="goTo(3)"></div>
+    <div class="nav-dot" onclick="goTo(4)"></div>
+    <div class="nav-dot" onclick="goTo(5)"></div>
+    <div class="nav-dot" onclick="goTo(6)"></div>
+    <div class="nav-dot" onclick="goTo(7)"></div>
+  </div>
+</div>
+
+<script>
+const C = { accent:'#00D084', accent2:'#38E8A0', muted:'#777777', surface:'#141414', border:'#2A2A2A', text:'#E8E8E8', competitor:'#484848' };
+Chart.defaults.color = C.muted; Chart.defaults.borderColor = C.border; Chart.defaults.font.family = "'Inter', sans-serif"; Chart.defaults.font.size = 12;
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.nav-dot');
+const pageNum = document.getElementById('pageNum');
+const sectionNames = document.getElementById('sectionTracker').querySelectorAll('span:not(.sep)');
+let current = 0;
+sectionNames[0].classList.add('active-section');
+
+function goTo(n) {
+  slides[current].classList.remove('active'); dots[current].classList.remove('active');
+  current = Math.max(0, Math.min(n, slides.length - 1));
+  slides[current].classList.add('active'); dots[current].classList.add('active');
+  pageNum.textContent = current + 1;
+  sectionNames.forEach((s, i) => s.classList.toggle('active-section', i === current));
+  if ((current === 2 || current === 5) && !chartBuilt) buildCharts();
+}
+document.addEventListener('keydown', e => {
+  if (e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' ') { e.preventDefault(); goTo(current+1); }
+  if (e.key==='ArrowLeft'||e.key==='ArrowUp') { e.preventDefault(); goTo(current-1); }
+  if (e.key==='Home') { e.preventDefault(); goTo(0); }
+  if (e.key==='End') { e.preventDefault(); goTo(slides.length-1); }
+});
+
+let chartBuilt = false;
+function buildCharts() {
+  chartBuilt = true;
+  // Chart 1: Token pricing tiers
+  new Chart(document.getElementById('chart1').getContext('2d'), {
+    type:'bar', data:{ labels:['Free','Basic\n$3/M','Standard\n$6/M','Premium\n$45/M','Ultra\n$150/M'],
+      datasets:[{ data:[0,3,6,45,150], backgroundColor:[C.competitor,C.accent2,C.accent2,C.accent,C.accent], borderColor:'transparent', borderRadius:3, borderSkipped:false }] },
+    options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false},
+        tooltip:{ backgroundColor:C.surface, borderColor:C.border, borderWidth:1, titleColor:C.text, bodyColor:C.muted, callbacks:{label:ctx=>ctx.parsed.y===0?' Free':' $'+ctx.parsed.y+'/M tokens'} } },
+      scales:{ x:{grid:{color:C.border},ticks:{color:C.muted,font:{size:11}}},
+        y:{grid:{color:C.border},ticks:{color:C.muted,font:{family:'JetBrains Mono',size:11},callback:v=>'$'+v},beginAtZero:true} } }
+  });
+  // Chart 2: Before/After agent shift (grouped bar)
+  new Chart(document.getElementById('chart2').getContext('2d'), {
+    type:'bar', data:{ labels:['Data Centers','Software','Workers','Revenue Model'],
+      datasets:[
+        { label:'Before (SaaS era)', data:[30,60,80,40], backgroundColor:C.competitor, borderRadius:3, borderSkipped:false },
+        { label:'After (AaaS era)', data:[70,90,20,85], backgroundColor:C.accent, borderRadius:3, borderSkipped:false }
+      ] },
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:true, position:'top', labels:{color:C.muted, font:{size:11}, boxWidth:12, padding:12}},
+        tooltip:{ backgroundColor:C.surface, borderColor:C.border, borderWidth:1, titleColor:C.text, bodyColor:C.muted } },
+      scales:{ x:{grid:{color:C.border},ticks:{color:C.muted,font:{size:11}}},
+        y:{grid:{color:C.border},ticks:{color:C.muted,font:{family:'JetBrains Mono',size:11},callback:v=>v+'%'},beginAtZero:true,max:100} } }
+  });
+}
+
+let locked=false;
+window.addEventListener('DOMContentLoaded', () => toggle169());
+function toggle169() {
+  const deck=document.getElementById('deck'), btn=document.getElementById('aspectBtn'); locked=!locked;
+  if(locked){deck.style.width='1280px';deck.style.height='720px';deck.style.maxWidth='1280px';deck.style.maxHeight='720px';btn.style.color=C.accent;btn.style.borderColor=C.accent;btn.textContent='16:9 locked';}
+  else{deck.style.width='';deck.style.height='';deck.style.maxWidth='';deck.style.maxHeight='';btn.style.color='';btn.style.borderColor='';btn.textContent='16:9';}
+}
+
+async function exportPDF() {
+  const deck=document.getElementById('deck'),saved=current,orig=deck.style.cssText;
+  deck.style.width='1280px';deck.style.height='720px';deck.style.maxWidth='1280px';deck.style.maxHeight='720px';
+  Chart.defaults.animation=false; if(!chartBuilt)buildCharts();
+  const{jsPDF}=window.jspdf; const pdf=new jsPDF({orientation:'landscape',unit:'px',format:[1280,720],compress:true});
+  for(let i=0;i<slides.length;i++){
+    slides.forEach(s=>{s.style.display='none';s.classList.remove('active');});
+    slides[i].style.display='flex';slides[i].classList.add('active');
+    document.querySelectorAll('.nav-dot,.ctrl-btn').forEach(b=>b.style.display='none');
+    pageNum.textContent=i+1;
+    sectionNames.forEach((s,idx)=>s.classList.toggle('active-section',idx===i));
+    await new Promise(r=>setTimeout(r,1500));
+    const canvas=await html2canvas(deck,{width:1280,height:720,scale:2,backgroundColor:'#0A0A0A',useCORS:true,logging:false});
+    if(i>0)pdf.addPage([1280,720],'landscape');
+    pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',0,0,1280,720);
+    slides[i].querySelectorAll('a[href]').forEach(a=>{const r=a.getBoundingClientRect(),d=deck.getBoundingClientRect();if(r.width>0&&a.href.startsWith('http'))pdf.link(r.left-d.left,r.top-d.top,r.width,r.height,{url:a.href});});
+  }
+  pdf.save('GTC2026_Keynote_Insights.pdf'); Chart.defaults.animation=true; deck.style.cssText=orig;
+  document.querySelectorAll('.nav-dot,.ctrl-btn').forEach(b=>b.style.display=''); goTo(saved);
+}
+</script>
+
+<a id="deck-exit" href="../../personal.html#projects" aria-label="Back to minjae.co" title="Back to site (Esc)">&times;</a>
+<style>
+  #deck-exit {
+    position: fixed; top: 10px; left: 12px; z-index: 9999;
+    font: 20px/1 sans-serif; text-decoration: none;
+    color: rgba(255,255,255,.55);
+    background: rgba(255,255,255,.08);
+    padding: 6px 12px; border-radius: 4px;
+  }
+  #deck-exit:hover { color: #fff; background: rgba(255,255,255,.16); }
+</style>
+<script>
+  (function () {
+    function exitDeck() {
+      if (window.history.length > 1) { history.back(); return; }
+      window.close();
+      setTimeout(function () { window.location.href = '../../personal.html#projects'; }, 150);
+    }
+    document.getElementById('deck-exit').addEventListener('click', function (e) {
+      e.preventDefault(); exitDeck();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') exitDeck();
+    });
+  })();
+</script>
+</body>
+</html>
